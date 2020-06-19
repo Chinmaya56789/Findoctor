@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!--Chinmaya Update-->
+	<link rel="stylesheet" type="text/css" href="css/upgrade-chinmaya.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--Chinmaya Update-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Find easily a doctor and book online an appointment">
+	<title>SUPERDOC</title>
+
+	<!-- Favicons-->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+	<!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+
+	<!-- BASE CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/menu.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+	<link href="css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+    
+	<!-- YOUR CUSTOM CSS -->
+	<link href="css/custom.css" rel="stylesheet">
+	
+</head>
+
+<body style="overflow: scroll;"id="bdy" >
+
+	<div id="preloader" class="Fixed">
+		<div data-loader="circle-side"></div>
+	</div>
+	<!-- /Preload-->
+	
+	<div id="page" class="sticky-top">		
+	<?php include_once 'header.php'; ?>
+	<!-- /header -->
+	<main>
+		<div class="hero_map">
+			<div id="map"></div>
+			<div class="loc-input" style="">
+				<div class="loc-input-group cen form-group" style="margin-bottom: 0 !important">
+					<div class="form-control fa fa-map-marker mp-mar" style="border-top-right-radius: 0 !important; border-bottom-right-radius:0 !important;margin-right: 0 !important;border: 1px solid #74d1c6;border-right: 0;">
+					</div>
+
+
+					<input id="latlng" type="" name="" value="berhampur,odisha" class="form-control" style="border-radius: 0 !important; margin-right: 0 !important;margin-left: 0 !important; border: 1px solid #74d1c6;border-left: 0">
+
+
+					<div id="current" class="form-control fa fa-crosshairs cross" style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;border: 0 !important; background-color: #74d1c6;border: 1px solid #74d1c6;border-left: 0;" type="button"></div>
+				</div>
+			</div>
+			<!-- <div id="map_listing"></div> -->
+			
+		</div>
+		<!-- /hero_map -->
+
+		
+		<!-- /white_bg -->
+	</main>
+	<!-- /main content -->
+	<!--/footer-->
+	</div>
+	<!-- page -->
+	<div class="sld container">
+		<div class="arrow">
+			<div class="fa" id="arw">
+				&#xf102;
+			</div>
+		</div>
+		<div class="sld-form">
+			<form method="post" action="list.html" class="search_wp">
+				<input type="hidden" id="locality" name="locality">
+				<input type="hidden"  id="full-add" name="address">
+				<div id="custom-search-input" class="container">
+					<div class="input-group">
+						<input type="text" class=" search-query" placeholder="Ex. Name, Specialization ....">
+						<input type="submit" class="btn_search" value="Search">
+					</div>
+					<!-- <ul style="text-align: center !important; margin-bottom: 10px !important;margin-top: 20px !important;" >
+						<li style="width: 45% !important;" >
+							<input type="radio" id="all-1" name="radio_search-1" value="all" checked="">
+							<label for="all-1" style="width: 100%;">All</label>
+						</li>
+						<li style="width: 45% !important;">
+							<input type="radio" id="doctor-1" name="radio_search-1" value="doctor">
+							<label for="doctor-1" style="width: 100%;">Doctor</label>
+						</li>
+					</ul> -->
+					<ul style="text-align: center; margin-bottom: 1px !important;"
+					class="hzslide" >
+						<li>
+							<input type="radio" name="opt" id="option-1">
+							<label style="min-width: 80px;" for="option-1">Option-1</label>
+						</li>
+						<li>
+							<input type="radio" name="opt" id="option-2">
+							<label style="min-width: 80px;" for="option-2">Option-2</label>
+						</li>
+					</ul>
+					<ul style="white-space:nowrap; overflow:auto;margin-top:10px !important;" class="hzslide" >
+						<li >
+							<input type="radio" id="all" name="radio_search" value="all" checked="">
+							<label for="all">All</label>
+						</li>
+						<li >
+							<input type="radio" id="doctor" name="radio_search" value="doctor">
+							<label for="doctor">Doctor</label>
+						</li>
+						<li>
+							<input type="radio" id="clinic" name="radio_search" value="clinic">
+							<label for="clinic">Clinic</label>
+						</li>
+						<li>
+							<input type="radio" id="clinic-1" name="radio_search" value="clinic">
+							<label for="clinic-1">Clinic-1</label>
+						</li>
+						<li>
+							<input type="radio" id="clinic-2" name="radio_search" value="clinic">
+							<label for="clinic-2">Clinic-2</label>
+						</li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</div>
+		
+
+	<div id="toTop"></div>
+	<!-- Back to top button -->
+	<!-- Geocoder -->
+    <!-- <script type="text/javascript"> 
+      var map;
+      var marker;
+      var myLatlng = new google.maps.LatLng(20.268455824834792,85.84099235520011);
+      var geocoder = new google.maps.Geocoder();
+      var infowindow = new google.maps.InfoWindow();
+      function initialize(){
+      var mapOptions = {
+      zoom: 18,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+      map = new google.maps.Map(document.getElementById("myMap"), mapOptions);
+
+      marker = new google.maps.Marker({
+      map: map,
+      position: myLatlng,
+      draggable: true 
+      }); 
+
+      geocoder.geocode({'latLng': myLatlng }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      if (results[0]) {
+      $('#latitude,#longitude').show();
+      $('#address').val(results[0].formatted_address);
+      $('#latitude').val(marker.getPosition().lat());
+      $('#longitude').val(marker.getPosition().lng());
+      infowindow.setContent(results[0].formatted_address);
+      infowindow.open(map, marker);
+      }
+      }
+      });
+
+      google.maps.event.addListener(marker, 'dragend', function() {
+
+      geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      if (results[0]) {
+      $('#address').val(results[0].formatted_address);
+      $('#latitude').val(marker.getPosition().lat());
+      $('#longitude').val(marker.getPosition().lng());
+      infowindow.setContent(results[0].formatted_address);
+      infowindow.open(map, marker);
+      }
+      }
+      });
+      });
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script> -->
+    
+	<!-- COMMON SCRIPTS -->
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/common_scripts.min.js"></script>
+	<script src="js/functions.js"></script>
+	
+	<!-- SPECIFIC SCRIPTS -->
+	<!-- <script src="http://maps.googleapis.com/maps/api/js"></script> -->
+	<script src="js/markerclusterer.js"></script>
+    <script src="js/map_home.js"></script>
+    <script src="js/infobox.js"></script>
+
+<!--double angle arrow-->	
+<script type="text/javascript">
+	window.onscroll = function() {scrl()};
+	function scrl()
+	{
+		if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
+		    document.getElementById('arw').innerHTML='&#xf103;';
+		  } else {
+		    document.getElementById('arw').innerHTML='&#xf102;';
+		  }
+	}
+</script>
+<!--double angle arrow -->
+ <script>
+      function initMap() 
+   	{
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: {lat: 19.314962, lng: 84.794090},
+          disableDefaultUI: true
+        });
+        var geocoder = new google.maps.Geocoder();
+        var mark;
+        // <!--Auto Complter -->
+    	var input=document.getElementById('latlng');
+    	var autocomplete = new google.maps.places.Autocomplete(input);
+		// <!--Auto Complete -->
+        	
+        	document.getElementById('latlng').addEventListener('keypress', 
+        		function(e)
+        		{
+        			if (e.key =='Enter') 
+        			{    
+	        			document.getElementById("full-add").value=document.getElementById("latlng").value;
+
+	        			if (mark) 
+	        				{
+	        					mark.setMap(null);
+	        					mark=null;
+	        				}
+	        			var address = document.getElementById('latlng').value;
+	        			geocoder.geocode({'address': address}, function(results, status)
+	        			{  
+	        			console.log(results);      				
+					        if (status === 'OK') 
+					      	{				          
+					            map.setCenter(results[0].geometry.location);
+					            map.setZoom(17);
+					            var marker = new google.maps.Marker({
+					              map:map,
+					              position: results[0].geometry.location,
+					              draggable:true,
+					              animation: google.maps.Animation.DROP,
+					              title:"drag the marker to set new position "
+					            });
+					            mark=marker;
+								//City Name (with Out Drag) -Start
+							    // for (var j=0; j<results.length; j++)
+	        		// 			{
+	          //   				 	if (results[j].types[0]=='locality')
+	          //       					{
+	          //           					indice=j;
+	          //           					console.log(j);
+	          //           					break;
+	          //      						}
+	          //   				}
+	          					j=0;
+	            				// console.log(results[j]);
+								for (var i=0; i<results[j].address_components.length; i++)
+	            				{
+									if (results[j].address_components[i].types[0] == "locality")
+									    {
+									    //this is the object you are looking for City
+									        city = results[j].address_components[i];
+									        document.getElementById("locality").value=city.long_name;
+									    }               
+	            				}
+	            				//City Name (with Out Drag) -End
+					            //drag positioning start
+					            marker.addListener("dragend", 
+							    function ()
+							    {
+							      map.setCenter(marker.getPosition());        
+							      geocoder.geocode({'location': marker.getPosition()}, function(results, status)
+							      	{
+							        	if (status === 'OK')
+							          	{
+							            	if (results[0]) 
+							            	{
+							            // alert(results[0].address_components[type:"locality"].long_name);					            	
+							              		document.getElementById('latlng').value=results[0].formatted_address;
+							              		document.getElementById("full-add").value=results[0].formatted_address;
+
+							              	//City Name (with Drag) -Start
+							               		for (var j=0; j<results.length; j++)
+	        									{
+	            									if (results[j].types[0]=='locality')
+	                								{
+	                    								indice=j;
+	                    								break;
+	               									}
+	            								}
+												for (var i=0; i<results[j].address_components.length; i++)
+	            								{
+									                if (results[j].address_components[i].types[0] == "locality")
+									                {
+									                    //this is the object you are looking for City
+									                    city = results[j].address_components[i];
+									                    document.getElementById("locality").value=city.long_name;
+									                }               
+	            								}
+	            								//City Name (with Drag) -End
+							              
+							            }
+							            else 
+							            {
+							              window.alert('No results found');
+							            }
+							          }
+							          else 
+							          {
+							            window.alert('Geocoder failed due to: ' + status);
+							          }
+							        });
+
+							    });
+					            //drag positioning end
+					          }
+					          else 
+					          {
+					            alert('Geocode was not successful for the following reason: ' + status);
+					          }
+					        });
+
+        			}
+        	
+        		});	
+			//To get current Location-start
+        	document.getElementById('current').addEventListener("click", 
+        		function()
+        		{
+  					if (navigator.geolocation) 
+       				{
+          				navigator.geolocation.getCurrentPosition(
+          				function(position)
+          			{
+          				console.log(position.coords.latitude);
+          				console.log(position.coords.longitude);
+            			var pos =
+            			{
+              				lat: position.coords.latitude,
+              				lng: position.coords.longitude
+            			};
+            			var geocoder = new google.maps.Geocoder;
+            			geocoder.geocode({'location': pos}, function(results, status)
+            			{
+            	 			document.getElementById('latlng').value = results[0].formatted_address;
+            	 			// console.log(results[0].formatted_address);
+            			});
+          			},function() 
+          			{
+            			handleLocationError(true, infoWindow, map.getCenter());
+          			});
+        			} 
+        			else 
+        			{
+          				// Browser doesn't support Geolocation
+          				handleLocationError(false, infoWindow, map.getCenter());
+        			}
+
+				});
+        	//To get current Location-End
+   	}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnLp4vhM8mQf454E0w0366Bp8QKJoNWhk&libraries=places&callback=initMap">
+    </script>
+    <script type="text/javascript">
+    	
+    </script>
+</body>
+
+</html>
